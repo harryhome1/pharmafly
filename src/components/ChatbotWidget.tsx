@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MessageSquare, X, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -7,7 +6,7 @@ const ChatbotWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     { 
-      text: "Hello! I'm AushadhAI's assistant. How can I help you today?", 
+      text: "Hello! I'm PharmaFly's assistant. How can I help you today?", 
       isBot: true 
     }
   ]);
@@ -80,7 +79,7 @@ const ChatbotWidget = () => {
                   <MessageSquare className="h-4 w-4 text-aushadh-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">AushadhAI Assistant</h3>
+                  <h3 className="font-semibold">PharmaFly Assistant</h3>
                   <p className="text-xs text-white/80">Online | Typically replies in 1 min</p>
                 </div>
               </div>

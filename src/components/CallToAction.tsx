@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, ArrowRight, Upload, ChevronRight, Clock } from 'lucide-react';
@@ -53,7 +52,7 @@ const CallToAction = () => {
               Ready to experience the future of medicine delivery?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-lg">
-              Join thousands of satisfied customers who save time and money with AushadhAI. 
+              Join thousands of satisfied customers who save time and money with PharmaFly. 
               Upload your prescription now and get medicines delivered in minutes.
             </p>
             

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Clock, Shield, Zap, Pill, CreditCard, MessageSquare } from 'lucide-react';
 
@@ -53,7 +52,7 @@ const Features = () => {
             Revolutionizing Medicine Delivery
           </h2>
           <p className="text-lg text-muted-foreground">
-            AushadhAI combines cutting-edge technology with rapid delivery to ensure you get the medicines you need, when you need them.
+            PharmaFly combines cutting-edge technology with rapid delivery to ensure you get the medicines you need, when you need them.
           </p>
         </div>
         

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Facebook, 
@@ -17,7 +16,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <a href="/" className="inline-block mb-6">
-              <span className="font-bold text-2xl text-gradient">AushadhAI</span>
+              <span className="font-bold text-2xl text-gradient">PharmaFly</span>
             </a>
             <p className="text-muted-foreground mb-6">
               Revolutionizing medicine delivery with AI-powered prescription analysis and 10-minute delivery.
@@ -127,7 +126,7 @@ const Footer = () => {
         
         <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} AushadhAI by Hariom. All rights reserved.
+            © {new Date().getFullYear()} PharmaFly by Hariom. All rights reserved.
           </p>
           
           <div className="flex flex-wrap gap-4 text-sm">

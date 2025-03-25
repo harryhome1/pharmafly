@@ -1,24 +1,23 @@
-
 import React from 'react';
 import { Star } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "AushadhAI has been a game-changer for me. I no longer need to make trips to the pharmacy or worry about missing doses. The app is incredibly easy to use, and the delivery is lightning fast!",
+    quote: "PharmaFly has been a game-changer for me. I no longer need to make trips to the pharmacy or worry about missing doses. The app is incredibly easy to use, and the delivery is lightning fast!",
     author: "Priya Sharma",
     title: "Chronic Care Patient",
     rating: 5,
     image: "https://placehold.co/100/0ea5e9/ffffff?text=PS"
   },
   {
-    quote: "As a busy professional, I don't have time to wait in pharmacy lines. AushadhAI delivers my medications in minutes, and their prescription analysis has caught potential drug interactions that my doctor missed.",
+    quote: "As a busy professional, I don't have time to wait in pharmacy lines. PharmaFly delivers my medications in minutes, and their prescription analysis has caught potential drug interactions that my doctor missed.",
     author: "Rahul Verma",
     title: "Software Engineer",
     rating: 5,
     image: "https://placehold.co/100/0ea5e9/ffffff?text=RV"
   },
   {
-    quote: "I was skeptical about AI reading my prescriptions, but AushadhAI's technology is flawless. It accurately read my doctor's handwriting (which even I struggle with!) and delivered the right medications every time.",
+    quote: "I was skeptical about AI reading my prescriptions, but PharmaFly's technology is flawless. It accurately read my doctor's handwriting (which even I struggle with!) and delivered the right medications every time.",
     author: "Dr. Anand Patel",
     title: "Medical Professional",
     rating: 5,
@@ -38,7 +37,7 @@ const Testimonials = () => {
             Trusted by Thousands
           </h2>
           <p className="text-lg text-muted-foreground">
-            See what our customers are saying about AushadhAI's revolutionary medicine delivery service.
+            See what our customers are saying about PharmaFly's revolutionary medicine delivery service.
           </p>
         </div>
         

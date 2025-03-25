@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -29,7 +28,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="flex items-center">
-            <span className="font-bold text-2xl text-gradient">AushadhAI</span>
+            <span className="font-bold text-2xl text-gradient">PharmaFly</span>
           </a>
         </div>
 

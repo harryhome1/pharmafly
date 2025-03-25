@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Upload, Search, ShoppingBag, Truck } from 'lucide-react';
 
@@ -42,7 +41,7 @@ const HowItWorks = () => {
             Process
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            How AushadhAI Works
+            How PharmaFly Works
           </h2>
           <p className="text-lg text-muted-foreground">
             A simple 4-step process that takes your prescription from upload to delivery in minutes, not days.
@@ -85,7 +84,7 @@ const HowItWorks = () => {
             <div className="col-span-1 lg:col-span-2">
               <h3 className="text-2xl font-bold mb-4">See How It Works</h3>
               <p className="text-muted-foreground mb-4">
-                Watch our demo video to see how easy it is to get your medicines delivered in minutes with AushadhAI.
+                Watch our demo video to see how easy it is to get your medicines delivered in minutes with PharmaFly.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center">
@@ -114,7 +113,7 @@ const HowItWorks = () => {
                 </div>
                 <img 
                   src="https://placehold.co/800x450/0ea5e9/ffffff?text=Video+Demo" 
-                  alt="AushadhAI Demo Video" 
+                  alt="PharmaFly Demo Video" 
                   className="w-full h-auto"
                 />
               </div>
