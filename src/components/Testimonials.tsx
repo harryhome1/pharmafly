@@ -4,7 +4,7 @@ import { Star } from 'lucide-react';
 const testimonials = [
   {
     quote: "PharmaFly has been a game-changer for me. I no longer need to make trips to the pharmacy or worry about missing doses. The app is incredibly easy to use, and the delivery is lightning fast!",
-    author: "Priya Sharma",
+    author: "Shreya kumari",
     title: "Chronic Care Patient",
     rating: 5,
     image: "https://placehold.co/100/0ea5e9/ffffff?text=PS"
