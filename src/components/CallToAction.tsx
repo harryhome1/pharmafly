@@ -110,14 +110,14 @@ const CallToAction = () => {
                   className="border-2 border-dashed border-white/20 rounded-lg p-8 text-center cursor-pointer hover:border-white/40 transition-colors"
                   onDrop={handleDrop}
                   onDragOver={handleDragOver}
-                  onClick={() => document.getElementById('prescription-upload')?.click()}
+                  onClick={() => document.getElementById('prescription-upload-cta')?.click()}
                 >
                   <Upload className="h-8 w-8 mx-auto mb-2 text-white/60" />
                   <p className="text-sm text-white/60">
                     {file ? file.name : "Drag & drop your prescription here or browse files"}
                   </p>
                   <input 
-                    id="prescription-upload" 
+                    id="prescription-upload-cta" 
                     type="file" 
                     className="hidden" 
                     accept="image/*"

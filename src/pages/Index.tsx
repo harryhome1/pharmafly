@@ -1,7 +1,6 @@
 
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
-import HeroSection from '@/components/HeroSection';
 import Features from '@/components/Features';
 import HowItWorks from '@/components/HowItWorks';
 import Pricing from '@/components/Pricing';
@@ -10,6 +9,7 @@ import TrustSection from '@/components/TrustSection';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 import ChatbotWidget from '@/components/ChatbotWidget';
+import PrescriptionAnalyzer from '@/components/PrescriptionAnalyzer';
 
 const Index = () => {
   // Implement smooth scrolling for anchor links
@@ -41,7 +41,7 @@ const Index = () => {
   return (
     <div className="min-h-screen overflow-hidden">
       <Navbar />
-      <HeroSection />
+      <PrescriptionAnalyzer />
       <Features />
       <HowItWorks />
       <Pricing />
