@@ -106,13 +106,13 @@ const Footer = () => {
               <li className="flex">
                 <MapPin className="h-5 w-5 text-aushadh-600 mr-3 flex-shrink-0" />
                 <span className="text-muted-foreground">
-                  123 Innovation Drive, Bangalore, Karnataka, India 560001
+                  123 Innovation Drive, Mumbai, Maharashtra, India 560001
                 </span>
               </li>
               <li className="flex">
                 <Mail className="h-5 w-5 text-aushadh-600 mr-3 flex-shrink-0" />
                 <a href="mailto:info@aushadhai.com" className="text-muted-foreground hover:text-aushadh-600 transition-colors">
-                  info@aushadhai.com
+                  Hariom@aushadhai.com
                 </a>
               </li>
               <li className="flex">
@@ -127,7 +127,7 @@ const Footer = () => {
         
         <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} AushadhAI. All rights reserved.
+            © {new Date().getFullYear()} AushadhAI by Hariom. All rights reserved.
           </p>
           
           <div className="flex flex-wrap gap-4 text-sm">
