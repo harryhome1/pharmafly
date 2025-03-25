@@ -7,7 +7,7 @@ const testimonials = [
     author: "Shreya kumari",
     title: "Chronic Care Patient",
     rating: 5,
-    image: "https://placehold.co/100/0ea5e9/ffffff?text=PS"
+    image: "https://placehold.co/100/0ea5e9/ffffff?text=SK"
   },
   {
     quote: "As a busy professional, I don't have time to wait in pharmacy lines. PharmaFly delivers my medications in minutes, and their prescription analysis has caught potential drug interactions that my doctor missed.",
