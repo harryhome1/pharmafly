@@ -1,11 +1,10 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Upload, Clock, Loader2 } from 'lucide-react';
+import { Upload, Clock, Loader2, ArrowRight, CheckCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { Input } from '@/components/ui/input';
-import { Form, FormField, FormItem, FormLabel, FormControl } from '@/components/ui/form';
-import { useForm } from 'react-hook-form';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 
 interface PrescriptionResult {
   medicine: string;
@@ -21,8 +20,6 @@ const PrescriptionAnalyzer = () => {
   const [loading, setLoading] = useState(false);
   const [address, setAddress] = useState('');
   const [result, setResult] = useState<PrescriptionResult | null>(null);
-  
-  const form = useForm();
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -105,14 +102,15 @@ const PrescriptionAnalyzer = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-aushadh-600 to-aushadh-800 text-white">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-white">Scan. Analyze.</span> <br />
-            <span className="bg-white text-aushadh-700 px-2">Get Medicines in 10 Minutes</span>
+    <section className="pt-24 pb-16 px-6 bg-gradient-to-br from-sky-500 via-blue-600 to-blue-700 text-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+            <span className="inline-block backdrop-blur-sm bg-white/10 px-4 py-2 rounded-lg">Scan. Analyze.</span>
+            <br />
+            <span className="inline-block mt-2 backdrop-blur-sm bg-white/10 px-4 py-2 rounded-lg">Get Medicines in 10 Minutes</span>
           </h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mt-4 backdrop-blur-sm bg-white/5 py-2 px-4 rounded-lg inline-block">
             Upload your prescription and let our AI instantly analyze it. 
             We'll deliver your medicines to your doorstep in minutes, not days.
           </p>
@@ -120,116 +118,161 @@ const PrescriptionAnalyzer = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Upload Section */}
-          <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-xl">
-            <h2 className="text-xl font-semibold mb-4">Upload Prescription</h2>
-            
-            <div 
-              className="border-2 border-dashed border-white/20 rounded-lg p-8 text-center cursor-pointer hover:border-white/40 transition-colors min-h-[200px] flex flex-col items-center justify-center"
-              onDrop={handleDrop}
-              onDragOver={handleDragOver}
-              onClick={() => document.getElementById('prescription-upload')?.click()}
-            >
-              {previewUrl ? (
-                <div className="w-full">
-                  <img 
-                    src={previewUrl} 
-                    alt="Prescription preview" 
-                    className="max-h-[200px] mx-auto mb-3 rounded-lg"
-                  />
-                  <p className="text-sm text-white/60">{file?.name}</p>
-                </div>
-              ) : (
-                <>
-                  <Upload className="h-12 w-12 mb-4 text-white/60" />
-                  <p className="text-white/80">
-                    Drag & drop your prescription here or browse files
-                  </p>
-                </>
-              )}
-              <input 
-                id="prescription-upload" 
-                type="file" 
-                className="hidden" 
-                accept="image/*"
-                onChange={handleFileChange}
-              />
-            </div>
-            
-            <Button 
-              className="w-full mt-4 bg-white text-aushadh-700 hover:bg-white/90 py-6"
-              onClick={analyzePrescription}
-              disabled={!file || loading}
-            >
-              {loading ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Analyzing...
-                </>
-              ) : (
-                'Analyze Prescription'
-              )}
-            </Button>
-          </div>
+          <Card className="backdrop-blur-xl bg-white/10 border-white/20 shadow-xl overflow-hidden">
+            <CardHeader className="border-b border-white/10 pb-4">
+              <CardTitle className="text-xl text-white">Upload Prescription</CardTitle>
+              <CardDescription className="text-white/70">
+                Drag and drop or browse to upload your prescription
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <div 
+                className="border-2 border-dashed border-white/30 rounded-xl p-8 text-center cursor-pointer hover:border-white/50 transition-all min-h-[200px] flex flex-col items-center justify-center group"
+                onDrop={handleDrop}
+                onDragOver={handleDragOver}
+                onClick={() => document.getElementById('prescription-upload')?.click()}
+              >
+                {previewUrl ? (
+                  <div className="w-full">
+                    <div className="relative mb-4 mx-auto w-fit">
+                      <img 
+                        src={previewUrl} 
+                        alt="Prescription preview" 
+                        className="max-h-[180px] mx-auto rounded-lg border-4 border-white/20 shadow-lg object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-2">
+                        <span className="text-sm font-medium text-white">Click to change</span>
+                      </div>
+                    </div>
+                    <p className="text-sm text-white/60">{file?.name}</p>
+                  </div>
+                ) : (
+                  <>
+                    <div className="p-3 rounded-full bg-white/10 mb-4 group-hover:bg-white/20 transition-all">
+                      <Upload className="h-10 w-10 text-white/80 group-hover:text-white transition-colors" />
+                    </div>
+                    <p className="text-white/80 group-hover:text-white transition-colors">
+                      Drag & drop your prescription here or browse files
+                    </p>
+                  </>
+                )}
+                <input 
+                  id="prescription-upload" 
+                  type="file" 
+                  className="hidden" 
+                  accept="image/*"
+                  onChange={handleFileChange}
+                />
+              </div>
+            </CardContent>
+            <CardFooter className="border-t border-white/10 pt-4">
+              <Button 
+                className="w-full bg-white text-blue-700 hover:bg-white/90 py-6 rounded-xl font-medium text-lg shadow-lg"
+                onClick={analyzePrescription}
+                disabled={!file || loading}
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    Analyzing...
+                  </>
+                ) : (
+                  <>
+                    Analyze Prescription
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </>
+                )}
+              </Button>
+            </CardFooter>
+          </Card>
           
           {/* Results Section */}
-          <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-xl">
-            <h2 className="text-xl font-semibold mb-4">Prescription Details</h2>
-            
-            {result ? (
-              <div className="space-y-6">
-                <div className="bg-white/20 p-4 rounded-xl">
-                  <h3 className="font-semibold text-lg mb-2">Medicine Details</h3>
-                  <ul className="space-y-2">
-                    <li className="flex justify-between">
-                      <span className="text-white/70">Medicine</span>
-                      <span className="font-medium">{result.medicine} {result.dosage}</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span className="text-white/70">Quantity</span>
-                      <span className="font-medium">{result.quantity}</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span className="text-white/70">Instructions</span>
-                      <span className="font-medium">{result.instructions}</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span className="text-white/70">Price</span>
-                      <span className="font-medium">₹{result.price}</span>
-                    </li>
-                  </ul>
+          <Card className="backdrop-blur-xl bg-white/10 border-white/20 shadow-xl overflow-hidden">
+            <CardHeader className="border-b border-white/10 pb-4">
+              <CardTitle className="text-xl text-white">Prescription Details</CardTitle>
+              <CardDescription className="text-white/70">
+                Your medicine details will appear here after analysis
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="pt-6">
+              {result ? (
+                <div className="space-y-6">
+                  <div className="backdrop-blur-md bg-white/20 p-5 rounded-xl border border-white/20">
+                    <h3 className="font-semibold text-lg mb-3 flex items-center">
+                      <CheckCircle className="mr-2 h-5 w-5 text-green-300" />
+                      Medicine Details
+                    </h3>
+                    <ul className="space-y-3">
+                      <li className="flex justify-between items-center border-b border-white/10 pb-2">
+                        <span className="text-white/70">Medicine</span>
+                        <span className="font-medium text-right">{result.medicine} {result.dosage}</span>
+                      </li>
+                      <li className="flex justify-between items-center border-b border-white/10 pb-2">
+                        <span className="text-white/70">Quantity</span>
+                        <span className="font-medium text-right">{result.quantity}</span>
+                      </li>
+                      <li className="flex justify-between items-center border-b border-white/10 pb-2">
+                        <span className="text-white/70">Instructions</span>
+                        <span className="font-medium text-right">{result.instructions}</span>
+                      </li>
+                      <li className="flex justify-between items-center">
+                        <span className="text-white/70">Price</span>
+                        <span className="font-medium text-lg text-right">₹{result.price}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Delivery Address</label>
+                    <Input 
+                      placeholder="Enter your full address"
+                      className="bg-white/10 border border-white/30 text-white placeholder:text-white/50 focus:border-white/50 h-12 text-base"
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
+                    />
+                  </div>
+                  
+                  <div className="bg-white/20 p-3 rounded-lg flex items-center gap-3 border border-white/10">
+                    <Clock className="h-5 w-5 flex-shrink-0 text-green-300" />
+                    <p className="text-sm">Expected delivery in <span className="font-semibold">10 minutes</span> after order confirmation</p>
+                  </div>
                 </div>
-                
-                <div>
-                  <label className="block text-sm font-medium mb-2">Delivery Address</label>
-                  <Input 
-                    placeholder="Enter your full address"
-                    className="bg-white/10 border border-white/20 text-white placeholder:text-white/50"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                  />
+              ) : (
+                <div className="text-center py-10 h-[282px] flex flex-col items-center justify-center">
+                  <div className="p-4 rounded-full bg-white/10 mb-4 animate-pulse">
+                    <img 
+                      src="https://cdn-icons-png.flaticon.com/512/4997/4997543.png" 
+                      alt="Prescription" 
+                      className="w-16 h-16 opacity-70 mix-blend-luminosity"
+                    />
+                  </div>
+                  <p className="text-white/70 max-w-xs mx-auto">
+                    Upload and analyze your prescription to see medicine details
+                  </p>
                 </div>
-                
-                <Button 
-                  className="w-full bg-white text-aushadh-700 hover:bg-white/90 py-6 rounded-xl font-medium text-lg"
-                  onClick={handleSubmit}
-                >
-                  Order Now • ₹{result.price}
-                  <span className="ml-2 text-sm opacity-80">10 min delivery</span>
-                </Button>
-              </div>
-            ) : (
-              <div className="text-center py-8">
-                <img 
-                  src="https://cdn-icons-png.flaticon.com/512/4997/4997543.png" 
-                  alt="Prescription" 
-                  className="w-32 h-32 mx-auto mb-4 opacity-50"
-                />
-                <p className="text-white/60">
-                  Upload and analyze your prescription to see medicine details
-                </p>
-              </div>
-            )}
-          </div>
+              )}
+            </CardContent>
+            <CardFooter className="border-t border-white/10 pt-4">
+              <Button 
+                className={`w-full py-6 rounded-xl font-medium text-lg shadow-lg transition-all duration-300 ${
+                  result 
+                    ? 'bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-white' 
+                    : 'bg-white/10 text-white/50 cursor-not-allowed hover:bg-white/10'
+                }`}
+                onClick={handleSubmit}
+                disabled={!result}
+              >
+                {result ? (
+                  <>
+                    Order Now • ₹{result.price}
+                    <span className="ml-2 text-sm opacity-80">10 min delivery</span>
+                  </>
+                ) : (
+                  'Submit Prescription'
+                )}
+              </Button>
+            </CardFooter>
+          </Card>
         </div>
       </div>
     </section>
