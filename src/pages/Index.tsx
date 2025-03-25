@@ -39,9 +39,11 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-hidden">
+    <div className="min-h-screen bg-white">
       <Navbar />
-      <PrescriptionAnalyzer />
+      <div className="pt-20">
+        <PrescriptionAnalyzer />
+      </div>
       <Features />
       <HowItWorks />
       <Pricing />

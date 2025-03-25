@@ -25,7 +25,7 @@ const featureData = [
     icon: <CreditCard className="h-8 w-8 text-aushadh-600" />,
     title: 'Competitive Pricing',
     description: 'We offer discounted prices compared to local pharmacies, saving you money on every order without compromising on quality.',
-    image: 'https://img.freepik.com/free-photo/person-paying-with-credit-card-pos-terminal_23-2149644088.jpg'
+    image: 'https://img.freepik.com/free-photo/person-using-credit-card-online-payment-shopping_53876-146387.jpg'
   },
   {
     icon: <MessageSquare className="h-8 w-8 text-aushadh-600" />,
@@ -43,7 +43,7 @@ const featureData = [
 
 const Features = () => {
   return (
-    <section id="features" className="section-spacing px-6 bg-gradient-to-b from-white to-aushadh-50/30">
+    <section id="features" className="section-spacing px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 stagger-animation">
           <span className="text-sm font-medium px-4 py-2 bg-aushadh-100 text-aushadh-800 rounded-full inline-block mb-4">
